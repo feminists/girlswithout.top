@@ -1,0 +1,13 @@
+name: Verify build
+on: [push]
+
+jobs:
+  build:
+    name: Verify build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v1
+      - name: Build for x86_64
+        run: |
+            docker build -t girlswithout-top:latest .
