@@ -16,4 +16,6 @@ RUN npm run build && \
     apk del .node && \
     apk add --no-cache darkhttpd
 
+USER girl
+
 CMD ["darkhttpd", "/out"]
